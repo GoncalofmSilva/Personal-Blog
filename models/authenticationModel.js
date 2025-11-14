@@ -34,6 +34,7 @@ export async function registerUser({ email, hashedPassword }) {
     id: userId++,
     email,
     hashedPassword,
+    role: 'guest'
   };
   users.push(newUser);
   await writeUsers(users);
