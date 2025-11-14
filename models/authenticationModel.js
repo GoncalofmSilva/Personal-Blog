@@ -22,7 +22,7 @@ export async function emailExists(email) {
   const users = await readUsers();
   for (const user of users) {
     if (user.email === email) {
-      return true;
+      return user;
     }
   }
   return false;
@@ -38,4 +38,16 @@ export async function registerUser({ email, hashedPassword }) {
   users.push(newUser);
   await writeUsers(users);
   return newUser;
+}
+
+export async function storeToken({email, token}){
+  const users = await readUsers()
+  for (const user of users) {
+    if (user.email === email) {
+      user.token = token
+      await writeUsers(users);
+      return user;
+    }
+  }
+  return false;
 }

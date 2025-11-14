@@ -1,16 +1,36 @@
-import express from "express";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import dotenv from "dotenv";
 dotenv.config();
-import { emailExists, registerUser } from "../models/authenticationModel.js";
+import { emailExists, registerUser, storeToken } from "../models/authenticationModel.js";
 const JWT_SECRET = process.env.JWT_SECRET;
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN;
 
 export const Login = async (req, res) => {
   try {
     const { email, password } = req.body;
-  } catch (error) {}
+    if (!email || !password) {
+      return res.status(400).json({ error: "Email and password are required" });
+    }
+
+    const user = await emailExists(email);
+    if (!user) {
+      return res.status(400).json({ error: "User not found" });
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, user.hashedPassword);
+    if (!isPasswordValid) {
+      return res.status(401).json({ error: "Invalid password" });
+    }
+
+    const token = jwt.sign({id: user.id, email: user.email}, JWT_SECRET, {expiresIn: JWT_EXPIRES_IN})
+
+    await storeToken({email, token})
+
+    res.status(201).json({ message: "Login successful", token });
+  } catch (error) {
+    res.status(500).json({message: "Error loging user"})
+  }
 };
 
 export const Register = async (req, res) => {
