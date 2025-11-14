@@ -10,6 +10,7 @@
     "id": 2,
     "email": "goncalo@gmail.com",
     "hashedPassword": "$2b$10$T9/hbMrhps4XK6N.Zr0IHODHHLfQ0sycvPNTqCU.iTcS9I19X4KuG",
-    "role": "guest"
+    "role": "guest",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJnb25jYWxvQGdtYWlsLmNvbSIsImlhdCI6MTc2MzE0MzM1MCwiZXhwIjoxNzYzMjI5NzUwfQ.R74gO_n_hbhkMe4pMaT74bCjJh9nRrSvC3Bjdam2qUc"
   }
 ]
