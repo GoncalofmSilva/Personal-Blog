@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import authRouter from "./routes/authenticationRoute.js";
+import authRouter from "./routes/authRoute.js";
 
 const app = express();
 const port = 3000;
