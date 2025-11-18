@@ -1,18 +1,7 @@
-import {
-  validToken,
-  getAllArticles,
-  getArticle,
-} from "../models/guestModel.js";
+import { getAllArticles, getArticle } from "../models/guestModel.js";
 
 export async function ListAllArticles(req, res) {
   try {
-    const {token} = req.parameters
-    
-    const verifyToken = await validToken(token)
-    if(verifyToken) {
-        
-    }
-
     const articles = await getAllArticles();
 
     res.status(201).json({ message: "All Articles Listed", articles });
@@ -21,4 +10,19 @@ export async function ListAllArticles(req, res) {
   }
 }
 
-export async function ArticleDetails() {}
+export async function ArticleDetails(req, res) {
+  try {
+    const { id } = req.params;
+
+    const article = await getArticle(Number(id));
+
+    if (!article) {
+      console.log(article)
+      return res.status(404).json({ message: "Article not found" });
+    }
+
+    res.status(200).json({ message: "Article Details", article });
+  } catch (error) {
+    res.status(500).json({ message: "Error Show Article Details"})
+  }
+}

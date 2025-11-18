@@ -23,18 +23,27 @@ async function readArticles() {
 }
 
 async function writeArticles(articles) {
-  await fs.promises.writeFile(articlesFilePath, JSON.stringify(articles, null, 2));
+  await fs.promises.writeFile(
+    articlesFilePath,
+    JSON.stringify(articles, null, 2)
+  );
 }
 
-export async function validToken(){
-
+export async function getAllArticles() {
+  const articles = await readArticles();
+  return articles;
 }
 
-export async function getAllArticles(){
-    const articles = await readArticles()
-    return articles
-}
-
-export async function getArticle(){
-
+export async function getArticle(id) {
+  const articles = await readArticles();
+  for (const article of articles) {
+    if (article.id === id) {
+      // Use object destructuring:
+      // - `id: _` pulls out the id property but assigns it to `_` (unused)
+      // - `...rest` collects all other properties into a new object
+      const { id: _, ...rest } = article;
+      return rest;
+    }
+  }
+  return false;
 }
