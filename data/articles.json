@@ -1,8 +1,14 @@
 [
-    {
-        "id": 1,
-        "title": "My first article",
-        "date": "August 7, 2024",
-        "description": "Lorem ipsum dolor sit amet"
-    }
+  {
+    "id": 1,
+    "title": "My first articleeee",
+    "date": "August 7, 2024",
+    "description": "Lorem ipsum dolor"
+  },
+  {
+    "id": 2,
+    "title": "My second articleeee",
+    "date": "August 7, 2025",
+    "description": "Lorem ipsum dolorrrr"
+  }
 ]
