@@ -41,8 +41,8 @@ export async function getArticle(id) {
       // Use object destructuring:
       // - `id: _` pulls out the id property but assigns it to `_` (unused)
       // - `...rest` collects all other properties into a new object
-      const { id: _, ...rest } = article;
-      return rest;
+      //const { id: _, ...rest } = article;
+      return article;
     }
   }
   return false;
