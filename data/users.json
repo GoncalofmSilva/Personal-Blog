@@ -4,7 +4,7 @@
     "email": "goncalofmsilva2004@gmail.com",
     "hashedPassword": "$2b$10$WEBltEO3MXmJKxDEljQ.9OZTPFAKGjvNXDuCkHJD.S8VyR3P6oBt2",
     "role": "guest",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJnb25jYWxvZm1zaWx2YTIwMDRAZ21haWwuY29tIiwiaWF0IjoxNzYzNDI3NTIyLCJleHAiOjE3NjM1MTM5MjJ9.kTE0aLMJ_t6b2nAx7pSkHXzgDBE_qInGjXyECFC19t8"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJnb25jYWxvZm1zaWx2YTIwMDRAZ21haWwuY29tIiwicm9sZSI6Imd1ZXN0IiwiaWF0IjoxNzYzNzQ4ODM2LCJleHAiOjE3NjM4MzUyMzZ9.SCiPbAIJiqrIVsu85q9lc2sEPa0HPyZvznw9UmLcOzE"
   },
   {
     "id": 2,
@@ -12,5 +12,12 @@
     "hashedPassword": "$2b$10$T9/hbMrhps4XK6N.Zr0IHODHHLfQ0sycvPNTqCU.iTcS9I19X4KuG",
     "role": "guest",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJnb25jYWxvQGdtYWlsLmNvbSIsImlhdCI6MTc2MzE0MzM1MCwiZXhwIjoxNzYzMjI5NzUwfQ.R74gO_n_hbhkMe4pMaT74bCjJh9nRrSvC3Bjdam2qUc"
+  },
+  {
+    "id": 3,
+    "email": "admin@admin.com",
+    "hashedPassword": "$2y$10$BThp5b7giW6DURk/yZfUwexpW9Xwi.L7XOjV0iqkAjf7JrD3enTS.",
+    "role": "admin",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NjM3NDg2NDEsImV4cCI6MTc2MzgzNTA0MX0.wnoHZBV3Zmdj5xEl2Qhkb_tN7jpONND91bLZCu2A8hA"
   }
 ]

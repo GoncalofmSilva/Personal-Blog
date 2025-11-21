@@ -23,11 +23,11 @@ export const Login = async (req, res) => {
       return res.status(401).json({ error: "Invalid password" });
     }
 
-    const token = jwt.sign({id: user.id, email: user.email}, JWT_SECRET, {expiresIn: JWT_EXPIRES_IN})
+    const token = jwt.sign({id: user.id, email: user.email, role: user.role}, JWT_SECRET, {expiresIn: JWT_EXPIRES_IN})
 
-    await storeToken({email, token})
+    const userToken = await storeToken({email, token})
 
-    res.status(201).json({ message: "Login successful", token });
+    res.status(201).json({ message: "Login successful", userToken });
   } catch (error) {
     res.status(500).json({message: "Error loging user"})
   }

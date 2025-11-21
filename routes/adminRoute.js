@@ -5,13 +5,13 @@ import {
   AddArticle,
   RemoveArticle,
 } from "../controllers/adminController.js";
-import { verifyToken } from "../middlewares/guestMiddleware.js";
+import { verifyToken, verifyRole } from "../middlewares/guestMiddleware.js";
 
 const adminRouter = Router();
 
-adminRouter.get("/admin", verifyToken, ListAllArticles);
-adminRouter.put("/edit/:id", verifyToken, EditArticle);
-adminRouter.post("/new", verifyToken, AddArticle);
-adminRouter.delete("/delete/:id", verifyToken, RemoveArticle);
+adminRouter.get("/admin", verifyToken, verifyRole(["admin"]), ListAllArticles);
+adminRouter.put("/edit/:id", verifyToken, verifyRole(["admin"]), EditArticle);
+adminRouter.post("/new", verifyToken, verifyRole(["admin"]), AddArticle);
+adminRouter.delete("/delete/:id", verifyToken, verifyRole(["admin"]), RemoveArticle);
 
 export default adminRouter;
