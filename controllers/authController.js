@@ -27,7 +27,7 @@ export const Login = async (req, res) => {
 
     const userToken = await storeToken({email, token})
 
-    res.status(201).json({ message: "Login successful", userToken });
+    res.status(200).json({ message: "Login successful", userToken });
   } catch (error) {
     res.status(500).json({message: "Error loging user"})
   }
